@@ -8,7 +8,7 @@ public class Version {
 	 * ESSE PARAMETRO NÃO DEVE SER MODIFICADO MANUALMENTE, UTILIZE O SCRIPT
 	 * 'changeversion.sh'
 	 */
-	public static final String VERSAO = "1.0.0";
+	public static final String VERSAO = "2.3.1.1";
 	public static final String BUILDTIME = "10/07/2020 09:04";
 
 	public static final String NOME_SISTEMA = "XY Inc";
