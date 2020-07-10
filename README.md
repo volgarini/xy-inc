@@ -8,9 +8,10 @@ Nesse sistema é possível:
 - Listar POIs por proximidade
 
 # Tecnologias
-- `Java 11 (Open JDK)` - Principal linguagem de progração
+- `Java 11 (Open JDK)` - Principal linguagem de programação
 - `Spring boot` - Framework base
 - `Lombok` - Biblioteca focada em produtividade e redução de código
-- `PostgreSql` - Sistema gerenciador de banco de dados objeto relacional,
+- `PostgreSql` - Sistema gerenciador de banco de dados objeto relacional
 - `Swagger` - Estrutura para documentação da API
 - `Docker` - Plataforma para executar e criar containers
+- `Shell Script` - Arquivo executável, com instruções definidas para gerenciamento de versão
