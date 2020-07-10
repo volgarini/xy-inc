@@ -6,3 +6,11 @@ Nesse sistema é possível:
 - Cadastrar pontos de interesses (POIs)
 - Listar POIs cadastrados
 - Listar POIs por proximidade
+
+# Tecnologias
+- Java 11 (Open JDK)
+- Spring boot
+- Lombok
+- PostgreSql
+- Swagger
+- Docker
