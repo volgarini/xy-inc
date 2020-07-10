@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @Validated
 @Entity
-@Table(name = "poi", schema = "xyinc")
+@Table(name = "poi", schema = "public")
 public class PoiEntity {
 	@Id
 	@Column(name = "id")
