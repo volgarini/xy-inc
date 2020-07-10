@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.com.xyinc.br.com.xyinc.controller.GPSController;
+import br.com.xyinc.br.com.xyinc.domain.Version;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;
@@ -31,7 +32,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackageClasses = { GPSController.class })
 public class SwaggerConfig {
 	private ApiInfo apiInfo() {
-		return new ApiInfo("XY Inc", "Serviço Gerenciamento GPS", "1.0.0", "",
+		return new ApiInfo(Version.NOME_SISTEMA, Version.DESCRICAO_SISTEMA, Version.VERSAO_BUILD, "",
 				new Contact("Lucas Volgarini", null, "lucasvolgarini@gmail.com"), "", // "License of API",
 				"", // "API license URL",
 				Collections.emptyList());
