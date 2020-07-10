@@ -9,7 +9,7 @@ public class Version {
 	 * 'changeversion.sh'
 	 */
 	public static final String VERSAO = "1.0.0.1-SNAPSHOT";
-	public static final String BUILDTIME = "10/07/2020 09:12";
+	public static final String BUILDTIME = "10/07/2020 09:14";
 
 	public static final String NOME_SISTEMA = "XY Inc";
 	public static final String DESCRICAO_SISTEMA = "Serviço Gerenciamento GPS";
