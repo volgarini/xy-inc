@@ -13,9 +13,6 @@ import javax.validation.constraints.Size;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,24 +26,20 @@ public class PoiEntity {
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_POI")
 	@SequenceGenerator(name = "SEQ_POI", sequenceName = "SEQ_POI", allocationSize = 1)
-	@JsonIgnore
 	private Integer id;
 
 	@Size(min = 1, max = 100)
 	@NotNull(message = "Nome do POI deve ser preenchido")
-	@ApiModelProperty(value = "Nome do POI", example = "Minha Casa", required = true)
 	@Column(name = "nome")
 	private String nome;
 
 	@NotNull(message = "Coordenada X deve ser preenchida")
-	@Positive
-	@ApiModelProperty(value = "Coordenada X - Valor Positivo", example = "99.99", required = true)
+	@Positive(message = "Coordenada X deve ser maior que 0")
 	@Column(name = "coordenada_x")
 	private Double coordenadaX;
 
 	@NotNull(message = "Coordenada Y deve ser preenchida")
-	@Positive
-	@ApiModelProperty(value = "Coordenada Y - Valor Positivo", example = "99.99", required = true)
+	@Positive(message = "Coordenada Y deve ser maior que 0")
 	@Column(name = "coordenada_y")
 	private Double coordenadaY;
 

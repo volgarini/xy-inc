@@ -1,5 +1,6 @@
 package br.com.xyinc.br.com.xyinc.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.xyinc.br.com.xyinc.batabase.models.PoiEntity;
-import br.com.xyinc.br.com.xyinc.batabase.repository.PoiRepository;
+import br.com.xyinc.br.com.xyinc.business.PoiConverter;
+import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -27,7 +29,7 @@ import io.swagger.annotations.ApiResponses;
 @Api("/v2/poi")
 public class GPSController {
 	@Autowired
-	private PoiRepository poiRepository;
+	PoiConverter poiConverter;
 
 	@PostMapping(path = "/cadastrar", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Cadastrar POI", notes = "End-point tem por finalidade realizar cadastros de POIs")
@@ -35,10 +37,13 @@ public class GPSController {
 			@ApiResponse(code = 400, message = "Operação inválida."),
 			@ApiResponse(code = 401, message = "Operação não autorizada."),
 			@ApiResponse(code = 500, message = "Erro interno ao tentar realizar a operação.") })
-	public ResponseEntity<String> cadastrar(@Valid @RequestBody List<PoiEntity> pois) {
+	public ResponseEntity<String> cadastrar(@Valid @RequestBody List<PoiDTO> pois) {
 		try {
-			pois.forEach(poi -> poiRepository.save(poi));
+			poiConverter.cadastrarPois(pois);
 
+			if (!StringUtils.isEmpty(poiConverter.getMensagem())) {
+				return new ResponseEntity<>(poiConverter.getMensagem(), HttpStatus.BAD_REQUEST);
+			}
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception e) {
 			e.getMessage();
@@ -53,8 +58,8 @@ public class GPSController {
 			@ApiResponse(code = 400, message = "Operação inválida."),
 			@ApiResponse(code = 401, message = "Operação não autorizada."),
 			@ApiResponse(code = 500, message = "Erro interno ao tentar realizar a operação.") })
-	public ResponseEntity<List<PoiEntity>> listarTodos() {
-		return ResponseEntity.ok(poiRepository.findAll());
+	public ResponseEntity<List<PoiDTO>> listarTodos() {
+		return ResponseEntity.ok(poiConverter.listarTodos());
 	}
 
 	@GetMapping(path = "/proximidade", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -63,9 +68,9 @@ public class GPSController {
 			@ApiResponse(code = 400, message = "Operação inválida."),
 			@ApiResponse(code = 401, message = "Operação não autorizada."),
 			@ApiResponse(code = 500, message = "Erro interno ao tentar realizar a operação.") })
-	public ResponseEntity<List<PoiEntity>> listarProximidade(@RequestParam Double coordX, @RequestParam Double coordY,
+	public ResponseEntity<List<PoiDTO>> listarProximidade(@RequestParam Double coordX, @RequestParam Double coordY,
 			@RequestParam Double dMAx) {
-		return ResponseEntity.ok(poiRepository.findByCoordenadaXBetweenAndCoordenadaYBetween((coordX - dMAx),
-				(coordX + dMAx), (coordY - dMAx), (coordY + dMAx)));
+		return ResponseEntity.ok(
+				poiConverter.listarPorCoordenadas((coordX - dMAx), (coordX + dMAx), (coordY - dMAx), (coordY + dMAx)));
 	}
 }
