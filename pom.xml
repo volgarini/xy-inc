@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com</groupId>
 	<artifactId>xy-inc</artifactId>
-	<version>1.0.0-SNAPSHOT.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>xy-inc</name>
 	<description>Projeto de gerenciamento de sistema de GPS</description>
 
