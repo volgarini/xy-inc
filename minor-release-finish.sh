@@ -46,7 +46,7 @@ fi
 NOW=$(date +%d\\/%m\\/%Y" "%H:%M)
 sed -i "s/BUILDTIME =.*/BUILDTIME = \"$NOW\";/" src/main/java/br/com/xyinc/br/com/xyinc/domain/Version.java
 
-git commit -a -m "Fechamento da versão: $DEVELOPMENT_VERSION"
+git commit -a --author="Lucas Volgarini <lucasvolgarini@gmail.com>" -m "Fechamento da versão: $DEVELOPMENT_VERSION"
 git tag -a $SNAPSHOT_TAG -m "Fechamento da versão: $SNAPSHOT_TAG"
 git push origin $SNAPSHOT_TAG
 
@@ -74,7 +74,7 @@ if [ $EXIT_CODE -ne 0 ]; then
 fi
 
 echo "------------------- commit changes to new version  $NEW_VERSION -----------------"
-git commit -a -m "Alterando para versao $NEW_VERSION"
+git commit -a --author="Lucas Volgarini <lucasvolgarini@gmail.com>" -m "Alterando para versao $NEW_VERSION"
 EXIT_CODE=$?
 if [ $EXIT_CODE -ne 0 ]; then
 	git reset --hard
