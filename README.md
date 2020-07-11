@@ -68,3 +68,5 @@ Endpoint para listar todos os POIs cadastrados por proximidade
   }
 ]
 ```
+# Documentação do Swagger
+A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, basta acessar a url: http://localhost:8081/
