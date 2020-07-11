@@ -70,3 +70,7 @@ Endpoint para listar todos os POIs cadastrados por proximidade
 ```
 # Documentação com Swagger
 A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, basta acessar a url: http://localhost:8081/
+
+# Fechamento de Patch via Shell Script
+É possível realizar um fechamento de patch utilizando o arquivo `patch-release-finish.sh`. Esse arquivo irá fechar a versão atual, vai incrementar com mais 1 o valor na patch na nova branch.
+Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro, e se o Git estiver instalado no Windows é possível executar com o Git Bash.
