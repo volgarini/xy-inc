@@ -68,9 +68,6 @@ Endpoint para listar todos os POIs cadastrados por proximidade
   }
 ]
 ```
-# Documentação com Swagger
-A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, basta acessar a url: http://localhost:8081/
-
 # Executando a API
 Passo a passo para executar o projeto no Windows, onde todos os acessos e comandos foram executados via `Prompt de Comando` ou `Power Shell`:
 
@@ -89,6 +86,9 @@ Passo a passo para executar o projeto no Windows, onde todos os acessos e comand
   - `docker-compose up -d`
   
 Prontinho, a sua API está rodando na porta `8081`.
+
+# Documentação com Swagger
+A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, basta acessar a url: http://localhost:8081/
 
 # Fechamento de Patch via Shell Script
 É possível realizar um fechamento de patch utilizando o arquivo `patch-release-finish.sh`. Esse arquivo irá fechar a versão atual, vai incrementar com mais 1 o valor na patch na nova branch.
