@@ -68,8 +68,8 @@ public class GPSController {
 			@ApiResponse(code = 401, message = "Operação não autorizada."),
 			@ApiResponse(code = 500, message = "Erro interno ao tentar realizar a operação.") })
 	public ResponseEntity<List<PoiDTO>> listarProximidade(@RequestParam Double coordX, @RequestParam Double coordY,
-			@RequestParam Double dMAx) {
+			@RequestParam Double dMax) {
 		return ResponseEntity.ok(
-				poiConverter.listarPorCoordenadas((coordX - dMAx), (coordX + dMAx), (coordY - dMAx), (coordY + dMAx)));
+				poiConverter.listarPorCoordenadas((coordX - dMax), (coordX + dMax), (coordY - dMax), (coordY + dMax)));
 	}
 }

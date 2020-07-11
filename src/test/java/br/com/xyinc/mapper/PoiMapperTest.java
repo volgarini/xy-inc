@@ -2,10 +2,9 @@ package br.com.xyinc.mapper;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +15,7 @@ import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
 import br.com.xyinc.br.com.xyinc.mapper.PoiMapper;
 
 public class PoiMapperTest {
-	private List<PoiDTO> pois;
+	private ArrayList<PoiDTO> pois;
 	private PoiMapper mapper;
 	
 	@Before
@@ -27,11 +26,13 @@ public class PoiMapperTest {
 		poiLanchonete.setCoordenadaY(10d);
 		
 		PoiDTO poiAcademia = new PoiDTO();
-		poiLanchonete.setNome("Academia");
-		poiLanchonete.setCoordenadaX(-10d);
-		poiLanchonete.setCoordenadaY(-10d);
+		poiAcademia.setNome("Academia");
+		poiAcademia.setCoordenadaX(20d);
+		poiAcademia.setCoordenadaY(20d);
 		
-		pois = Arrays.asList(poiLanchonete, poiAcademia);
+		pois = new ArrayList<>();
+		pois.add(poiLanchonete);
+		pois.add(poiAcademia);
 		
 		mapper = new PoiMapper();
 	}
@@ -54,8 +55,27 @@ public class PoiMapperTest {
 	}
 	
 	@Test
+	public void devePegarMensagemVazia() {
+		StringBuilder mensagem = new StringBuilder();
+		
+		ArrayList<PoiEntity> poiEnts = new ArrayList<>();
+		pois.forEach(poi -> poiEnts.add(mapper.toEntity(poi)));
+		
+		poiEnts.forEach(entity -> mensagem.append(mapper.validarCampos(entity)));
+		
+		assertTrue(StringUtils.isEmpty(mensagem.toString()));
+	}
+	
+	@Test
 	public void devePegarMensagem() {
 		StringBuilder mensagem = new StringBuilder();
+		
+		PoiDTO poiRestaurante = new PoiDTO();
+		poiRestaurante.setNome("Restaurante");
+		poiRestaurante.setCoordenadaX(-30d);
+		poiRestaurante.setCoordenadaY(-30d);
+		
+		pois.add(poiRestaurante);
 		
 		ArrayList<PoiEntity> poiEnts = new ArrayList<>();
 		pois.forEach(poi -> poiEnts.add(mapper.toEntity(poi)));
