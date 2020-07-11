@@ -71,6 +71,25 @@ Endpoint para listar todos os POIs cadastrados por proximidade
 # Documentação com Swagger
 A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, basta acessar a url: http://localhost:8081/
 
+# Executando a API
+Passo a passo para executar o projeto no Windows, onde todos os acessos e comandos foram executados via `Prompt de Comando` ou `Power Shell`:
+
+- Tenha todas as ferramentas instaladas:
+  - `Java JDK 11`
+  - `Apache Maven`
+  - `Docker`
+  - `Docker Compose`
+  - `Git`
+- Faça o clone do projeto: `git clone https://github.com/volgarini/xy-inc.git`
+- Na pasta raiz do projeto `xy-inc` execute o commando:
+  - `mvn clean package`
+- Após finalizar o empacotamento, vamos criar a imagem do Docker:
+  - `docker build -t volgarini/xy-inc .`
+- Feito isso, a última parte é criar o container, para isso, na pasta do projeto `xy-inc` execute:
+  - `docker-compose up -d`
+  
+Prontinho, a sua API está rodando na porta `8081`.
+
 # Fechamento de Patch via Shell Script
 É possível realizar um fechamento de patch utilizando o arquivo `patch-release-finish.sh`. Esse arquivo irá fechar a versão atual, vai incrementar com mais 1 o valor na patch na nova branch.
 Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro, e se o Git estiver instalado no Windows é possível executar com o Git Bash.
