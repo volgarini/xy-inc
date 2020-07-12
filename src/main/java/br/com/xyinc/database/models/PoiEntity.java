@@ -28,7 +28,7 @@ public class PoiEntity {
 	@SequenceGenerator(name = "SEQ_POI", sequenceName = "SEQ_POI", allocationSize = 1)
 	private Integer id;
 
-	@Size(min = 1, max = 100)
+	@Size(min = 1, max = 100, message = "Tamanho mínimo 1 e máximo 100")
 	@NotNull(message = "Nome do POI deve ser preenchido")
 	@Column(name = "nome")
 	private String nome;
