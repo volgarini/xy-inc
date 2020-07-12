@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.controller;
+package br.com.xyinc.rest;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.xyinc.br.com.xyinc.business.PoiConverter;
-import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
+import br.com.xyinc.business.PoiConverter;
+import br.com.xyinc.dto.PoiDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -45,8 +45,6 @@ public class GPSController {
 			}
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception e) {
-			e.getMessage();
-			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

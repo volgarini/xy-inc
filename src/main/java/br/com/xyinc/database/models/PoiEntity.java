@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.batabase.models;
+package br.com.xyinc.database.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.config;
+package br.com.xyinc.config;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.xyinc.br.com.xyinc.controller.GPSController;
-import br.com.xyinc.br.com.xyinc.domain.Version;
+import br.com.xyinc.domain.Version;
+import br.com.xyinc.rest.GPSController;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;

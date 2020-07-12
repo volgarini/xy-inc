@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.dto;
+package br.com.xyinc.dto;
 
 import javax.validation.constraints.NotNull;
 

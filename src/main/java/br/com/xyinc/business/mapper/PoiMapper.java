@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.business.mapper;
+package br.com.xyinc.business.mapper;
 
 import java.util.Set;
 
@@ -6,8 +6,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
-import br.com.xyinc.br.com.xyinc.batabase.models.PoiEntity;
-import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
+import br.com.xyinc.database.models.PoiEntity;
+import br.com.xyinc.dto.PoiDTO;
 
 public class PoiMapper {
 	public PoiEntity toEntity(PoiDTO poi) {

@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.config;
+package br.com.xyinc.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

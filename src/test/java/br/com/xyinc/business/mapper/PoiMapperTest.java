@@ -1,25 +1,24 @@
-package br.com.xyinc.mapper;
+package br.com.xyinc.business.mapper;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.util.StringUtils;
 
-import br.com.xyinc.br.com.xyinc.batabase.models.PoiEntity;
-import br.com.xyinc.br.com.xyinc.business.mapper.PoiMapper;
-import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
+import br.com.xyinc.database.models.PoiEntity;
+import br.com.xyinc.dto.PoiDTO;
 
 public class PoiMapperTest {
 	private ArrayList<PoiDTO> pois;
 	private PoiMapper mapper;
 	
-	@Before
-	public void criarPoiDTO() {
+	@BeforeEach
+	void criarPoiDTO() {
 		PoiDTO poiLanchonete = new PoiDTO();
 		poiLanchonete.setNome("Lanchonete");
 		poiLanchonete.setCoordenadaX(10d);
@@ -37,7 +36,7 @@ public class PoiMapperTest {
 		mapper = new PoiMapper();
 	}
 	@Test
-	public void deveConverterSemErro() {
+	void deveConverterSemErro() {
 		ArrayList<PoiEntity> poiEnts = new ArrayList<>();
 		pois.forEach(poi -> poiEnts.add(mapper.toEntity(poi)));
 		
@@ -67,7 +66,7 @@ public class PoiMapperTest {
 	}
 	
 	@Test
-	public void devePegarMensagem() {
+	void devePegarMensagem() {
 		StringBuilder mensagem = new StringBuilder();
 		
 		PoiDTO poiRestaurante = new PoiDTO();

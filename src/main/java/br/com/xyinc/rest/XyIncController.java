@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.controller;
+package br.com.xyinc.rest;
 
 import java.io.IOException;
 
