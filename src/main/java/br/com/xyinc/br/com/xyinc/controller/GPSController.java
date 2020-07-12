@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.xyinc.br.com.xyinc.business.PoiConverter;
 import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
-import br.com.xyinc.br.com.xyinc.mapper.business.PoiConverter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

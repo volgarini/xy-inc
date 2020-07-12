@@ -35,7 +35,6 @@ public class PoiEntity {
 
 	@NotNull(message = "Coordenada X deve ser preenchida")
 	@Positive(message = "Coordenada X deve ser maior que 0")
-	@Column(name = "coordenada_x")
 	private Double coordenadaX;
 
 	@NotNull(message = "Coordenada Y deve ser preenchida")

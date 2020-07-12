@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.mapper;
+package br.com.xyinc.br.com.xyinc.business.mapper;
 
 import java.util.Set;
 

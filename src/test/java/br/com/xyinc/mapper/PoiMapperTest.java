@@ -11,8 +11,8 @@ import org.junit.Test;
 import org.springframework.util.StringUtils;
 
 import br.com.xyinc.br.com.xyinc.batabase.models.PoiEntity;
+import br.com.xyinc.br.com.xyinc.business.mapper.PoiMapper;
 import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
-import br.com.xyinc.br.com.xyinc.mapper.PoiMapper;
 
 public class PoiMapperTest {
 	private ArrayList<PoiDTO> pois;

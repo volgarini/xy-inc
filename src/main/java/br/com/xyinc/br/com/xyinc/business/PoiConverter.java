@@ -1,4 +1,4 @@
-package br.com.xyinc.br.com.xyinc.mapper.business;
+package br.com.xyinc.br.com.xyinc.business;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import br.com.xyinc.br.com.xyinc.batabase.repository.PoiRepository;
+import br.com.xyinc.br.com.xyinc.business.mapper.PoiMapper;
 import br.com.xyinc.br.com.xyinc.dto.PoiDTO;
-import br.com.xyinc.br.com.xyinc.mapper.PoiMapper;
 
 @Service
 public class PoiConverter {
