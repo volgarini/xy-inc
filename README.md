@@ -95,9 +95,9 @@ A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, bas
 Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro, e se o Git estiver instalado no Windows é possível executar com o Git Bash.
 
 # Teste Unitário com jUnit + Maven
-Para executar os testes, certifique-se dos seguintes passos:
+Para executar os testes, realize o seguinte passo a passo:
  - Verifique se o container `xy_inc_postgres` esteja rodando
- - Altere o arquivo `xy-inc/src/main/resources/application.properties`, tire o comentário # do valor `spring.datasource.url=jdbc:postgresql://localhost:5432` e comente com # o valor `spring.datasource.url=jdbc:postgresql://postgres:5432`
+ - Altere o arquivo `xy-inc/src/main/resources/application.properties`, remova o comentário # do valor `spring.datasource.url=jdbc:postgresql://localhost:5432` (linha 4) e comente com # o valor `spring.datasource.url=jdbc:postgresql://postgres:5432` (linha 5)
  - Agora na raiz do projeto, execute o comando `mvn test`
 
 Pronto, os testes unitários irão rodar!
