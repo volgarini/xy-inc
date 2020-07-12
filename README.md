@@ -79,7 +79,7 @@ Passo a passo para executar o projeto no Windows, onde todos os acessos e comand
   - `Git`
 - Faça o clone do projeto: `git clone https://github.com/volgarini/xy-inc.git`
 - Na pasta raiz do projeto `xy-inc` execute o commando:
-  - `mvn clean package`
+  - `mvn clean package -DskipTests`
 - Após finalizar o empacotamento, vamos criar a imagem do Docker:
   - `docker build -t volgarini/xy-inc .`
 - Feito isso, a última parte é criar o container, para isso, na pasta do projeto `xy-inc` execute:
