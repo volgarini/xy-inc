@@ -51,6 +51,11 @@ public class PoiMapperTest {
 		assertEquals(poiEnts.get(1).getNome(), pois.get(1).getNome());
 		assertEquals(poiEnts.get(1).getCoordenadaX(), pois.get(1).getCoordenadaX());
 		assertEquals(poiEnts.get(1).getCoordenadaY(), pois.get(1).getCoordenadaY());
+		
+		ArrayList<PoiDTO> poiDs = new ArrayList<>();
+		poiEnts.forEach(poiE -> poiDs.add(mapper.toDTO(poiE))); 
+		
+		assertEquals(2, poiDs.size());
 	}
 	
 	@Test

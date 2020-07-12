@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiResponses;
 @Api("/v2/poi")
 public class GPSController {
 	@Autowired
-	PoiConverter poiConverter;
+	private PoiConverter poiConverter;
 
 	@PostMapping(path = "/cadastrar", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Cadastrar POI", notes = "End-point tem por finalidade realizar cadastros de POIs")
