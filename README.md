@@ -92,7 +92,8 @@ A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, bas
 
 # Fechamento de Patch via Shell Script
 É possível realizar um fechamento de patch utilizando o arquivo `patch-release-finish.sh`. Esse arquivo irá fechar a versão atual, vai incrementar com mais 1 o valor na patch na nova branch.
-Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro, e se o Git estiver instalado no Windows é possível executar com o Git Bash.
+
+Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro.
 
 # Teste Unitário com jUnit + Maven
 Para executar os testes, realize o seguinte passo a passo:
