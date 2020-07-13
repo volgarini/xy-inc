@@ -96,7 +96,7 @@ A Swagger UI fornece uma documentação totalmente dinâmica da aplicação, bas
 Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro.
 
 # Teste Unitário com jUnit + Maven
-Para executar os testes, realize o seguinte passo a passo:
+Para executar os testes, realize o seguinte passo:
 
  - Na raiz do projeto, execute o comando `mvn test`
 
