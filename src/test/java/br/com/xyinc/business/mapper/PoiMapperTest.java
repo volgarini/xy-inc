@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 import br.com.xyinc.database.models.PoiEntity;
 import br.com.xyinc.dto.PoiDTO;
 
-public class PoiMapperTest {
+class PoiMapperTest {
 	private ArrayList<PoiDTO> pois;
 	private PoiMapper mapper;
 	
@@ -21,13 +21,13 @@ public class PoiMapperTest {
 	void criarPoiDTO() {
 		PoiDTO poiLanchonete = new PoiDTO();
 		poiLanchonete.setNome("Lanchonete");
-		poiLanchonete.setCoordenadaX(10d);
-		poiLanchonete.setCoordenadaY(10d);
+		poiLanchonete.setCoordenadaX(10);
+		poiLanchonete.setCoordenadaY(10);
 		
 		PoiDTO poiAcademia = new PoiDTO();
 		poiAcademia.setNome("Academia");
-		poiAcademia.setCoordenadaX(20d);
-		poiAcademia.setCoordenadaY(20d);
+		poiAcademia.setCoordenadaX(20);
+		poiAcademia.setCoordenadaY(20);
 		
 		pois = new ArrayList<>();
 		pois.add(poiLanchonete);
@@ -59,7 +59,7 @@ public class PoiMapperTest {
 	}
 	
 	@Test
-	public void devePegarMensagemVazia() {
+	void devePegarMensagemVazia() {
 		StringBuilder mensagem = new StringBuilder();
 		
 		ArrayList<PoiEntity> poiEnts = new ArrayList<>();
@@ -76,8 +76,8 @@ public class PoiMapperTest {
 		
 		PoiDTO poiRestaurante = new PoiDTO();
 		poiRestaurante.setNome("Restaurante");
-		poiRestaurante.setCoordenadaX(-30d);
-		poiRestaurante.setCoordenadaY(-30d);
+		poiRestaurante.setCoordenadaX(-30);
+		poiRestaurante.setCoordenadaY(-30);
 		
 		pois.add(poiRestaurante);
 		

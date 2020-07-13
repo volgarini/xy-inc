@@ -35,12 +35,12 @@ public class PoiEntity {
 
 	@NotNull(message = "Coordenada X deve ser preenchida")
 	@Positive(message = "Coordenada X deve ser maior que 0")
-	private Double coordenadaX;
+	private Integer coordenadaX;
 
 	@NotNull(message = "Coordenada Y deve ser preenchida")
 	@Positive(message = "Coordenada Y deve ser maior que 0")
 	@Column(name = "coordenada_y")
-	private Double coordenadaY;
+	private Integer coordenadaY;
 
 	@Override
 	public String toString() {

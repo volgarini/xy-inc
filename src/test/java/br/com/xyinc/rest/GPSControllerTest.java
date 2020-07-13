@@ -25,8 +25,8 @@ class GPSControllerTest {
 	void deveRetornarBadRequest() {
 		PoiDTO poiRestaurante = new PoiDTO();
 		poiRestaurante.setNome("Restaurante");
-		poiRestaurante.setCoordenadaX(-30d);
-		poiRestaurante.setCoordenadaY(-30d);
+		poiRestaurante.setCoordenadaX(-30);
+		poiRestaurante.setCoordenadaY(-30);
 		
 		pois.add(poiRestaurante);
 				
@@ -39,13 +39,13 @@ class GPSControllerTest {
 	void deveRetornarCreated(){
 		PoiDTO poiRestaurante = new PoiDTO();
 		poiRestaurante.setNome("Restaurante");
-		poiRestaurante.setCoordenadaX(30d);
-		poiRestaurante.setCoordenadaY(30d);
+		poiRestaurante.setCoordenadaX(30);
+		poiRestaurante.setCoordenadaY(30);
 		
 		PoiDTO poiCasa = new PoiDTO();
 		poiCasa.setNome("Minha Casa");
-		poiCasa.setCoordenadaX(15d);
-		poiCasa.setCoordenadaY(15d);
+		poiCasa.setCoordenadaX(15);
+		poiCasa.setCoordenadaY(15);
 		
 		pois.add(poiRestaurante);
 		pois.add(poiCasa);
@@ -67,7 +67,7 @@ class GPSControllerTest {
 	
 	@Test
 	void deveRertornarPorProximidade() {
-		ResponseEntity<List<PoiDTO>> response = controller.listarProximidade(40d, 40d, 10d);
+		ResponseEntity<List<PoiDTO>> response = controller.listarProximidade(40, 40, 10);
 		
 		List<PoiDTO> listaPoi = response.getBody();
 		

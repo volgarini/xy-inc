@@ -9,5 +9,5 @@ import br.com.xyinc.database.models.PoiEntity;
 
 @Repository
 public interface PoiRepository extends JpaRepository<PoiEntity, Integer> {
-	public List<PoiEntity> findByCoordenadaXBetweenAndCoordenadaYBetween(Double x1, Double x2, Double y1, Double y2);
+	public List<PoiEntity> findByCoordenadaXBetweenAndCoordenadaYBetween(Integer x1, Integer x2, Integer y1, Integer y2);
 }

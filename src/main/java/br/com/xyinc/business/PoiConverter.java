@@ -43,7 +43,7 @@ public class PoiConverter {
 		return pois;
 	}
 
-	public List<PoiDTO> listarPorCoordenadas(Double coordXini, Double coordXfim, Double coordYini, Double coordYfim) {
+	public List<PoiDTO> listarPorCoordenadas(Integer coordXini, Integer coordXfim, Integer coordYini, Integer coordYfim) {
 		ArrayList<PoiDTO> pois = new ArrayList<>();
 
 		poiRepository.findByCoordenadaXBetweenAndCoordenadaYBetween(coordXini, coordXfim, coordYini, coordYfim)

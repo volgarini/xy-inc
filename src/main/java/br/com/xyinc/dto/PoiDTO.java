@@ -16,11 +16,11 @@ public class PoiDTO {
 	@ApiModelProperty(value = "Nome do POI", example = "Minha Casa", required = true)
 	private String nome;
 	
-	@ApiModelProperty(value = "Coordenada X - Valor Positivo", example = "99.99", required = true)
-	private Double coordenadaX;
+	@ApiModelProperty(value = "Coordenada X - Valor Positivo", example = "99", required = true)
+	private Integer coordenadaX;
 	
-	@ApiModelProperty(value = "Coordenada Y - Valor Positivo", example = "99.99", required = true)
-	private Double coordenadaY;
+	@ApiModelProperty(value = "Coordenada Y - Valor Positivo", example = "50", required = true)
+	private Integer coordenadaY;
 
 	@Override
 	public String toString() {
