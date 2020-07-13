@@ -28,8 +28,8 @@ Endpoint para realizar cadastro de uma lista de POIs
 ```text
 [
   {
-    "coordenadaX": 99.99,
-    "coordenadaY": 99.99,
+    "coordenadaX": 99,
+    "coordenadaY": 50,
     "nome": "Minha Casa"
   }
 ]
@@ -44,8 +44,8 @@ Endpoint para listar todos os POIs cadastrados
 ```text
 [
   {
-    "coordenadaX": 99.99,
-    "coordenadaY": 99.99,
+    "coordenadaX": 99,
+    "coordenadaY": 50,
     "nome": "Minha Casa"
   }
 ]
@@ -62,8 +62,8 @@ Endpoint para listar todos os POIs cadastrados por proximidade
 ```text
 [
   {
-    "coordenadaX": 99.99,
-    "coordenadaY": 99.99,
+    "coordenadaX": 99,
+    "coordenadaY": 50,
     "nome": "Minha Casa"
   }
 ]
