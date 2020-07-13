@@ -97,9 +97,10 @@ Obs.: Caso esteja no Windows precisa ser usado alguma ferramenta de terceiro.
 
 # Teste Unitário com jUnit + Maven
 Para executar os testes, realize o seguinte passo a passo:
- - Verifique se o container `xy_inc_postgres` esteja rodando
- - Altere o arquivo `xy-inc/src/main/resources/application.properties`, remova o comentário # do valor `spring.datasource.url=jdbc:postgresql://localhost:5432` (linha 4) e comente com # o valor `spring.datasource.url=jdbc:postgresql://postgres:5432` (linha 5)
- - Agora na raiz do projeto, execute o comando `mvn test`
+
+ - Na raiz do projeto, execute o comando `mvn test`
+
+Os testes são execudatos em uma instancia do H2 Database em memória.
 
 Pronto, os testes unitários irão rodar!
 
