@@ -68,6 +68,6 @@ public class GPSController {
 	public ResponseEntity<List<PoiDTO>> listarProximidade(@RequestParam Integer coordX, @RequestParam Integer coordY,
 			@RequestParam Integer dMax) {
 		return ResponseEntity.ok(
-				poiConverter.listarPorCoordenadas((coordX - dMax), (coordX + dMax), (coordY - dMax), (coordY + dMax)));
+				poiConverter.listarPorCoordenadas(coordX, coordY, dMax));
 	}
 }

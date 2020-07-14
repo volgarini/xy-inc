@@ -43,10 +43,10 @@ public class PoiConverter {
 		return pois;
 	}
 
-	public List<PoiDTO> listarPorCoordenadas(Integer coordXini, Integer coordXfim, Integer coordYini, Integer coordYfim) {
+	public List<PoiDTO> listarPorCoordenadas(Integer coordX, Integer coordY, Integer dMax) {
 		ArrayList<PoiDTO> pois = new ArrayList<>();
 
-		poiRepository.findByCoordenadaXBetweenAndCoordenadaYBetween(coordXini, coordXfim, coordYini, coordYfim)
+		poiRepository.findByCoordenadaXBetweenAndCoordenadaYBetween((coordX - dMax), (coordX + dMax), (coordY - dMax), (coordY + dMax))
 				.forEach(entity -> pois.add(mapper.toDTO(entity)));
 
 		return pois;
