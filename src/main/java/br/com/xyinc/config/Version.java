@@ -1,4 +1,4 @@
-package br.com.xyinc.domain;
+package br.com.xyinc.config;
 
 public class Version {
 	private Version() {

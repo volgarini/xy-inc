@@ -20,11 +20,11 @@ VERSION_CLEAN=${NEW_VERSION/-SNAPSHOT/}
 
 
 # change version inside Version.java
-sed -i "s%VERSAO =.*%VERSAO = \"${VERSION_CLEAN}\";%" src/main/java/br/com/xyinc/br/com/xyinc/domain/Version.java
+sed -i "s%VERSAO =.*%VERSAO = \"${VERSION_CLEAN}\";%" src/main/java/br/com/xyinc/config/Version.java
 
 # change build date
 NOW=$(date +%d\\/%m\\/%Y" "%H:%M)
-sed -i "s/BUILDTIME =.*/BUILDTIME = \"$NOW\";/" src/main/java/br/com/xyinc/br/com/xyinc/domain/Version.java
+sed -i "s/BUILDTIME =.*/BUILDTIME = \"$NOW\";/" src/main/java/br/com/xyinc/config/Version.java
 
 # Updates artifacts to the next development version
 echo "------------------- change root pom version -----------------"

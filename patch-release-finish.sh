@@ -44,7 +44,7 @@ fi
 
 # change build date
 NOW=$(date +%d\\/%m\\/%Y" "%H:%M)
-sed -i "s/BUILDTIME =.*/BUILDTIME = \"$NOW\";/" src/main/java/br/com/xyinc/br/com/xyinc/domain/Version.java
+sed -i "s/BUILDTIME =.*/BUILDTIME = \"$NOW\";/" src/main/java/br/com/xyinc/config/Version.java
 
 git commit -a --author="Lucas Volgarini <lucasvolgarini@gmail.com>" -m "Fechamento da versão: $DEVELOPMENT_VERSION"
 git tag -a $SNAPSHOT_TAG -m "Fechamento da versão: $SNAPSHOT_TAG"
