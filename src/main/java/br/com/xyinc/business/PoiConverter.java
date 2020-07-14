@@ -18,18 +18,19 @@ public class PoiConverter {
 
 	private String mensagem;
 	private PoiMapper mapper;
-	
+
 	public PoiConverter() {
 		this.mensagem = "";
 		this.mapper = new PoiMapper();
 	}
 
-	
-
-	public void cadastrarPois(List<PoiDTO> pois) {
+	public void realizarValidacao(List<PoiDTO> pois) {
 		mensagem = "";
 		pois.forEach(poi -> mensagem += mapper.validarCampos(mapper.toEntity(poi)));
-
+	}
+	public void cadastrarPois(List<PoiDTO> pois) {
+		realizarValidacao(pois);
+		
 		if (StringUtils.isEmpty(mensagem)) {
 			pois.forEach(poi -> poiRepository.save(mapper.toEntity(poi)));
 		}
@@ -43,10 +44,20 @@ public class PoiConverter {
 		return pois;
 	}
 
+	public Integer coordDiff(Integer coordIni, Integer coordMax) {
+		return coordIni - coordMax;
+	}
+
+	public Integer coordSum(Integer coordIni, Integer coordMax) {
+		return coordIni + coordMax;
+	}
+
 	public List<PoiDTO> listarPorCoordenadas(Integer coordX, Integer coordY, Integer dMax) {
 		ArrayList<PoiDTO> pois = new ArrayList<>();
 
-		poiRepository.findByCoordenadaXBetweenAndCoordenadaYBetween((coordX - dMax), (coordX + dMax), (coordY - dMax), (coordY + dMax))
+		poiRepository
+				.findByCoordenadaXBetweenAndCoordenadaYBetween(coordDiff(coordX, dMax), coordSum(coordX, dMax),
+						coordDiff(coordY, dMax), coordSum(coordY, dMax))
 				.forEach(entity -> pois.add(mapper.toDTO(entity)));
 
 		return pois;
